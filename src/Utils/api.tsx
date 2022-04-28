@@ -11,3 +11,7 @@ export const getPremieringShows = () => instance.get<Show[]>(`/schedule?country=
     .then(res => res.data)
     .then(allShows => allShows.filter(show => show.name==='Episode 1' && show.season===1))
     .catch(data => ({error: data}));
+
+export const getSearchedShows = (search) => instance.get<Show[]>('/search/shows?q=' + search)
+.then(res => res.data)
+.catch(data => ({error: data}));

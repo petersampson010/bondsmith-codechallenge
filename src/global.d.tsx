@@ -4,7 +4,7 @@ declare global {
         searchedShows: Show[],
         searchActive: Boolean,
         showDetailActive: Boolean,
-        showActive: Show
+        activeShow: Show
     }
 
     type ShowDetail = {

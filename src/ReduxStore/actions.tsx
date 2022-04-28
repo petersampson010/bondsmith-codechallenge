@@ -8,3 +8,8 @@ export const updateShowDetailActive = (bool, show) => ({
     bool,
     show
 })
+
+export const updateSearchShows = (shows) => ({
+    type: 'UPDATESEARCHSHOWS',
+    shows
+})

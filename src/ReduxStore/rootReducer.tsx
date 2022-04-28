@@ -5,7 +5,7 @@ export const initialState = {
     searchedShows: [],
     searchActive: false,
     showDetailActive: false,
-    showActive: null
+    activeShow: null
 }
 
 const rootReducer: Reducer<{}> = (state=initialState, action) => {
@@ -19,7 +19,15 @@ const rootReducer: Reducer<{}> = (state=initialState, action) => {
             return {
                 ...state, 
                 showDetailActive: action.bool,
-                showActive: action.show
+                activeShow: action.show
+            }
+        case 'UPDATESEARCHSHOWS':
+            return {
+                ...state, 
+                searchedShows: action.shows,
+                searchActive: true,
+                showDetailActive: false,
+                activeShow: null
             }
         default:
             return state;
