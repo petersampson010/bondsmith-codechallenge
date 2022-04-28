@@ -1,4 +1,10 @@
 declare global {
+    type Store = {
+        premShows: Show[],
+        searchedShows: Show[],
+        searchActive: Boolean
+    }
+
     type ShowDetail = {
         genres: [String]
         image: {

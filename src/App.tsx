@@ -1,28 +1,18 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FC } from 'react';
-import HeaderBar from './Components/HeaderBar/HeaderBar.tsx';
-import SearchBar from './Components/SearchBar/SearchBar.tsx';
-import SearchResults from './Components/SearchResults/SearchResults.tsx';
-import { getPremieringShows } from './Utils/api.tsx';
+import { Provider } from 'react-redux';
+import { legacy_createStore } from 'redux'
+import Home from './Components/Home/Home.tsx';
+import rootReducer from './ReduxStore/rootReducer.tsx';
 
 const App: FC = () => {
-
-  useEffect(() => {
-    const getPremShows = async() => {
-      const allShowsToday: Show[] = await getPremieringShows();
-      console.log(allShowsToday);
-    }
-    getPremShows();
-  }, [])
+  
+  const store = legacy_createStore(rootReducer)
 
   return (
-    <div className="fluid-container">
-      <HeaderBar />
-      <div className="fluid-container">
-        <SearchBar/>
-        <SearchResults/>
-      </div>
-    </div>
+      <Provider store={store}>
+        <Home/>
+      </Provider>
   );
 };
 
