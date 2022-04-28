@@ -2,7 +2,9 @@ declare global {
     type Store = {
         premShows: Show[],
         searchedShows: Show[],
-        searchActive: Boolean
+        searchActive: Boolean,
+        showDetailActive: Boolean,
+        showActive: Show
     }
 
     type ShowDetail = {
@@ -16,6 +18,8 @@ declare global {
         network: {
             name: String
         }
+        premiered: String
+        status: String
         officialSite: String
         rating: {
             average: number
@@ -28,7 +32,6 @@ declare global {
     type Show = {
         show: ShowDetail
         season: Number
-        genres: [String]
         image: String
         language: String
         name: String

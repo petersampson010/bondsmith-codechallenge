@@ -1,0 +1,15 @@
+.show-detail-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.show-detail-text {
+    width: 50%;
+}
+
+.large-image-cover {
+    height: 400px;
+    width: 240px;
+    object-fit: cover;
+}

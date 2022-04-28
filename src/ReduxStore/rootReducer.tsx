@@ -3,7 +3,9 @@ import { Reducer } from '@reduxjs/toolkit'
 export const initialState = {
     premShows: [],
     searchedShows: [],
-    searchActive: false
+    searchActive: false,
+    showDetailActive: false,
+    showActive: null
 }
 
 const rootReducer: Reducer<{}> = (state=initialState, action) => {
@@ -12,6 +14,12 @@ const rootReducer: Reducer<{}> = (state=initialState, action) => {
             return {
                 ...state, 
                 premShows: action.premShows
+            }
+        case "UPDATESHOWDETAILACTIVE":
+            return {
+                ...state, 
+                showDetailActive: action.bool,
+                showActive: action.show
             }
         default:
             return state;

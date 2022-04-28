@@ -13,7 +13,7 @@ const SearchResults: FC = () => {
 console.log(searchedShows);
   return (
     <div className="container search-results-cont">
-        {searchActive ? [1,2,3,4,5,6,7].map(x => <ShowCard/>) : [1,2,3,4,5,6,7].map(x => <ShowCard/>)}
+        {searchActive ? [searchedShows].map(x => <ShowCard show={x}/>) : premShows.map(x => <ShowCard show={x}/>)}
     </div>
   );
 };

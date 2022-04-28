@@ -7,7 +7,7 @@ const SearchBar: FC = () => {
   return (
     <div className='fluid-container head-bar-cont'>
         <div className='container search-bar-cont p-4'>
-            <h2>Theatre from API</h2>
+            <h2>Sav State</h2>
             <SearchBox/>
         </div>
     </div>
