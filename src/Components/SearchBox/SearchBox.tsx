@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateSearchShows } from '../../ReduxStore/actions.tsx';
@@ -10,16 +10,13 @@ const SearchBox: FC = () => {
     const dispatch = useDispatch(),
     [searchEntry, updateSearchEntry] = useState('');
 
-    const handleDebounceFn = async(inputValue) => {
+    const handleDebounceFn = async(inputValue: String) => {
         window.history.replaceState({}, document.title, '?search=' + inputValue);
         const shows = await getSearchedShows(inputValue);
-        console.log(shows);
         dispatch(updateSearchShows(shows));
     }
     
     const debounceFn = useCallback(_.debounce(handleDebounceFn, 400), []);
-
-    const runSearch = (e) => updateSearchEntry(e.target.value);
 
     const handleChange = (e) => {
         updateSearchEntry(e.target.value);

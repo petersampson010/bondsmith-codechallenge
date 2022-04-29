@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateShowDetailActive } from '../../ReduxStore/actions.tsx';
@@ -7,7 +7,6 @@ import './ShowCard.scss';
 type Props = {
     show: Show
 }
-
 
 const ShowCard: FC<Props> = ({show}) => {
   const dispatch = useDispatch();

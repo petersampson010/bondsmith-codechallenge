@@ -17,14 +17,13 @@ const Home: FC = () => {
   useEffect(() => {
     const checkUrl = () => {
         const urlSearch = window.location.search.split('=')[1];
-        console.log(urlSearch);
         urlSearch ? setPremShows() : setSearchedShows(urlSearch);
     }
     const setPremShows = async() => {
         const premShows: Show[] | {error: any} = await getPremieringShows();
         dispatch(updatePremShows(premShows));
     }
-    const setSearchedShows = async(search) => {
+    const setSearchedShows = async(search: String) => {
         const searchedShows: Show[] | {error: any} = await getSearchedShows(search);
         dispatch(updateSearchShows(searchedShows));
     }
