@@ -41,11 +41,11 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## Installed Packages 
 
-Axios: API calls
-React Testing Library: Testing
-Bootstrap, Sass: Styling
-Lodash: Helper Functions
-Redux: State Management
+Axios: API calls.\
+React Testing Library: Testing.\
+Bootstrap, Sass: Styling.\
+Lodash: Helper Functions.\
+Redux: State Management.\
 
 ## Learn More
 
