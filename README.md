@@ -45,7 +45,7 @@ Axios: API calls.\
 React Testing Library: Testing.\
 Bootstrap, Sass: Styling.\
 Lodash: Helper Functions.\
-Redux: State Management.\
+Redux: State Management
 
 ## Learn More
 
