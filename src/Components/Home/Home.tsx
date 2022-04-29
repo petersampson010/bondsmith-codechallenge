@@ -7,17 +7,28 @@ import SearchResults from '../SearchResults/SearchResults.tsx';
 import { updatePremShows } from '../../ReduxStore/actions.tsx';
 import { getPremieringShows } from '../../Utils/api.tsx';
 import ShowDetail from '../ShowDetail/ShowDetail.tsx';
+import { getSearchedShows } from '../../Utils/api.tsx';
+import { updateSearchShows } from '../../ReduxStore/actions.tsx';
 
 const Home: FC = () => {
   const dispatch = useDispatch(),
   showDetailActive = useSelector((state: Store) => state.showDetailActive);
 
   useEffect(() => {
-    const getPremShows = async() => {
-      const premShows: Show[] = await getPremieringShows();
-      dispatch(updatePremShows(premShows));
+    const checkUrl = () => {
+        const urlSearch = window.location.search.split('=')[1];
+        console.log(urlSearch);
+        urlSearch ? setPremShows() : setSearchedShows(urlSearch);
     }
-    getPremShows();
+    const setPremShows = async() => {
+        const premShows: Show[] | {error: any} = await getPremieringShows();
+        dispatch(updatePremShows(premShows));
+    }
+    const setSearchedShows = async(search) => {
+        const searchedShows: Show[] | {error: any} = await getSearchedShows(search);
+        dispatch(updateSearchShows(searchedShows));
+    }
+    checkUrl();
   }, [])
 
   return (

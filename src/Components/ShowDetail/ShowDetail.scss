@@ -1,6 +1,5 @@
 .show-detail-cont {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -9,7 +8,7 @@
 }
 
 .large-image-cover {
-    height: 400px;
-    width: 240px;
+    height: 40vw;
+    width: 30vw;
     object-fit: cover;
 }

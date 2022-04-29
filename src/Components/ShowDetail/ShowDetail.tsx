@@ -17,8 +17,8 @@ const ShowDetail: FC = () => {
             <img className="large-image-cover" src={activeShow?.show?.image ? activeShow?.show?.image?.original : activeShow?.image} alt={activeShow?.show?.name}/>
             <div className="show-detail-text">
                 <h3>{activeShow?.show?.name}  ({activeShow?.show?.premiered?.split('-')[0]})</h3>
-                <p>{activeShow?.show?.summary?.replace('<p>', '').replace('</p>', '')}</p>
-                {/* <p>{activeShow.cast}</p> */}
+                {/* <p>{activeShow?.show?.summary?.replace('<p>', '').replace('</p>', '')}</p> */}
+                <p dangerouslySetInnerHTML={{__html: activeShow?.show?.summary}}></p>
                 <p>Status: {activeShow?.show?.status}</p>
                 <p>Genres: {activeShow?.show?.genres[0] ? activeShow?.show?.genres?.join(', ') : activeShow?.type}</p>
             </div>
