@@ -28,7 +28,7 @@ const SearchBox: FC = () => {
 
     return (
         <div>
-            <input type="text" placeholder="Search any shows here" value={searchEntry} onChange={handleChange}/>
+            <input data-testid="search-input" type="text" placeholder="Search any shows here" value={searchEntry} onChange={handleChange}/>
         </div>
     );
 };

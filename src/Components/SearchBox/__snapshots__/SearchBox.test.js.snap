@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShowDetail Component Test matches snapshot 1`] = `
+<div>
+  <div>
+    <input
+      data-testid="search-input"
+      placeholder="Search any shows here"
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;
